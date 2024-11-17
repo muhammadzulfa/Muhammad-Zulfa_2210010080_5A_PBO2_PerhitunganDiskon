@@ -45,27 +45,35 @@
                   <EmptySpace pref="23" max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jLabel1" min="-2" pref="171" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="141" max="-2" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="27" pref="27" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel3" min="-2" pref="76" max="-2" attributes="0"/>
-                      <Component id="jLabel4" min="-2" pref="124" max="-2" attributes="0"/>
-                      <Component id="jLabel6" min="-2" pref="107" max="-2" attributes="0"/>
-                      <Component id="jLabel7" min="-2" pref="107" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="cbbPersentase" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtHarga" min="-2" pref="151" max="-2" attributes="0"/>
-                      <Component id="sliderPersentase" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnHitung" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblHargaAkhir" alignment="0" min="-2" pref="156" max="-2" attributes="0"/>
-                      <Component id="lblAndaHemat" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="jLabel1" min="-2" pref="171" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                          <Component id="txtAlternatifPersentase" min="-2" pref="71" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="27" pref="27" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel3" min="-2" pref="76" max="-2" attributes="0"/>
+                              <Component id="jLabel4" min="-2" pref="124" max="-2" attributes="0"/>
+                              <Component id="jLabel6" min="-2" pref="107" max="-2" attributes="0"/>
+                              <Component id="jLabel7" min="-2" pref="107" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="cbbPersentase" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtHarga" min="-2" pref="151" max="-2" attributes="0"/>
+                              <Component id="sliderPersentase" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblHargaAkhir" alignment="0" min="-2" pref="156" max="-2" attributes="0"/>
+                              <Component id="lblAndaHemat" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
+                              <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                                  <Component id="lblAlternatifePersentase" alignment="1" min="-2" pref="66" max="-2" attributes="0"/>
+                                  <Component id="btnHitung" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
                   </Group>
                   <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
               </Group>
@@ -75,8 +83,11 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtAlternatifPersentase" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txtHarga" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -91,9 +102,11 @@
                       <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="sliderPersentase" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                  <Component id="lblAlternatifePersentase" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                   <Component id="btnHitung" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="lblHargaAkhir" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -154,6 +167,12 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JSlider" name="sliderPersentase">
+          <Properties>
+            <Property name="value" type="int" value="0"/>
+          </Properties>
+          <Events>
+            <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="sliderPersentaseStateChanged"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnHitung">
           <Properties>
@@ -196,6 +215,13 @@
         <Component class="javax.swing.JLabel" name="lblHargaAkhir">
         </Component>
         <Component class="javax.swing.JLabel" name="lblAndaHemat">
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblAlternatifePersentase">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="0%"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtAlternatifPersentase">
         </Component>
       </SubComponents>
     </Container>
