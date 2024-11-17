@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -35,11 +38,15 @@ public class Main extends javax.swing.JFrame {
         sliderPersentase = new javax.swing.JSlider();
         btnHitung = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        textareaRiwayat = new javax.swing.JTextArea();
         jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        lblHargaAkhir = new javax.swing.JLabel();
+        lblAndaHemat = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Apikasi Penghitung Umur");
+        setTitle("Apikasi Penghitung Diskon");
         setResizable(false);
         getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.LINE_AXIS));
 
@@ -57,44 +64,53 @@ public class Main extends javax.swing.JFrame {
         jLabel4.setText("Alternatif Persentase:");
 
         btnHitung.setText("Hitung");
+        btnHitung.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHitungActionPerformed(evt);
+            }
+        });
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        textareaRiwayat.setColumns(20);
+        textareaRiwayat.setRows(5);
+        jScrollPane1.setViewportView(textareaRiwayat);
 
         jLabel5.setText("Riwayat Perhitungan");
+
+        jLabel6.setText("Harga Akhir:");
+
+        jLabel7.setText("Anda Hemat:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cbbPersentase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtHarga, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(sliderPersentase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnHitung))
-                        .addGap(29, 29, 29))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))))
-            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 437, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(141, 141, 141))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cbbPersentase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtHarga, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sliderPersentase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnHitung)
+                    .addComponent(lblHargaAkhir, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblAndaHemat, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -115,7 +131,15 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(sliderPersentase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnHitung)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addGap(24, 24, 24)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(lblHargaAkhir))
+                .addGap(24, 24, 24)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(lblAndaHemat))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -126,6 +150,79 @@ public class Main extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnHitungActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHitungActionPerformed
+        try {
+            int harga = Integer.parseInt(txtHarga.getText());
+            String persentase = (String) cbbPersentase.getSelectedItem();
+            float resultHargaAkhir = 0;
+            float resultAndaHemat = 0;
+            String diskon = "0%";
+
+            switch (persentase) {
+                case "2%":
+                    resultAndaHemat = (float) (harga * 0.02);
+                    resultHargaAkhir = (float) (harga - resultAndaHemat);
+                    diskon = "2%";
+                    break;
+
+                case "5%":
+                    resultAndaHemat = (float) (harga * 0.05);
+                    resultHargaAkhir = (float) (harga - resultAndaHemat);
+                    diskon = "5%";
+                    break;
+
+                case "10%":
+                    resultAndaHemat = (float) (harga * 0.10);
+                    resultHargaAkhir = (float) (harga - resultAndaHemat);
+                    diskon = "10%";
+                    break;
+
+                case "20%":
+                    resultAndaHemat = (float) (harga * 0.20);
+                    resultHargaAkhir = (float) (harga - resultAndaHemat);
+                    diskon = "20%";
+                    break;
+
+                case "30%":
+                    resultAndaHemat = (float) (harga * 0.30);
+                    resultHargaAkhir = (float) (harga - resultAndaHemat);
+                    diskon = "30%";
+                    break;
+
+                case "40%":
+                    resultAndaHemat = (float) (harga * 0.40);
+                    resultHargaAkhir = (float) (harga - resultAndaHemat);
+                    diskon = "40%";
+                    break;
+
+                case "50%":
+                    resultAndaHemat = (float) (harga * 0.50);
+                    resultHargaAkhir = (float) (harga - resultAndaHemat);
+                    diskon = "50%";
+                    break;
+
+                default:
+                    // Jika tidak ada persentase yang sesuai
+                    resultAndaHemat = 0;
+                    resultHargaAkhir = harga;
+                    diskon = "0%";
+                    break;
+            }
+
+            // Menampilkan hasil pada label
+            lblHargaAkhir.setText("Rp " + resultHargaAkhir);
+            lblAndaHemat.setText("Rp " + resultAndaHemat);
+
+            textareaRiwayat.append("Harga Rp " + harga + "\n");
+            textareaRiwayat.append("Diskon " + diskon + "\n");
+            textareaRiwayat.append("Harga Akhir Rp " + resultHargaAkhir + "\n");
+            textareaRiwayat.append("Hemat Rp " + resultAndaHemat + "\n");
+            textareaRiwayat.append("==================================================\n");
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnHitungActionPerformed
 
     /**
      * @param args the command line arguments
@@ -170,10 +267,14 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JLabel lblAndaHemat;
+    private javax.swing.JLabel lblHargaAkhir;
     private javax.swing.JSlider sliderPersentase;
+    private javax.swing.JTextArea textareaRiwayat;
     private javax.swing.JTextField txtHarga;
     // End of variables declaration//GEN-END:variables
 }
